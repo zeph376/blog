@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:5173/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
+
+    <script type="module" src="./movie-watchlist_files/client"></script>
+
+    
+    <link rel="icon" type="image/svg+xml" href="http://localhost:5173/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movie-watchlist</title>
+  <style type="text/css" data-vite-dev-id="C:/Users/treas/Desktop/Movie directory/movie-watchlist/src/index.css">html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: #eef2ff;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+</style><style type="text/css" data-vite-dev-id="C:/Users/treas/Desktop/Movie directory/movie-watchlist/src/App.css">:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f5f7fb;
+  color: #1f2937;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #eef2ff;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  padding: 22px 28px;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.navbar__brand {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.navbar__logo {
+  display: inline-flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: #4338ca;
+  color: white;
+  font-size: 1.25rem;
+}
+
+.navbar__title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.navbar__subtitle {
+  margin: 2px 0 0;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.navbar__links {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.navbar__link {
+  border: 1px solid transparent;
+  background: transparent;
+  color: #334155;
+  padding: 12px 16px;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  background: #4338ca;
+  color: white;
+}
+
+.navbar__badge {
+  margin-left: 8px;
+  background: #e0e7ff;
+  color: #4338ca;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.app-content {
+  flex: 1;
+  padding: 24px 28px 40px;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.page-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.page-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 2.6vw, 2.5rem);
+}
+
+.page-header p {
+  margin: 8px 0 0;
+  color: #475569;
+  max-width: 44rem;
+}
+
+.search-bar {
+  flex: 1 1 320px;
+  max-width: 420px;
+}
+
+.search-bar input {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  padding: 14px 16px;
+  background: white;
+  color: #0f172a;
+  box-shadow: 0 10px 30px -24px rgba(15, 23, 42, 0.3);
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+  gap: 20px;
+}
+
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 18px 60px -42px rgba(15, 23, 42, 0.35);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(67, 56, 202, 0.35);
+}
+
+.movie-card__poster {
+  min-height: 340px;
+  overflow: hidden;
+}
+
+.movie-card__poster img {
+  width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.movie-card__info {
+  padding: 18px;
+}
+
+.movie-card__info h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+
+.movie-card__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: #475569;
+  margin-bottom: 12px;
+}
+
+.movie-card__rating {
+  margin: 0;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.movie-card__button {
+  width: calc(100% - 36px);
+  margin: 0 18px 18px;
+  padding: 12px 14px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: #4338ca;
+  color: white;
+  font-weight: 600;
+}
+
+.movie-card__button--remove {
+  background: white;
+  color: #4338ca;
+  border-color: #c7d2fe;
+}
+
+.loading-panel,
+.error-panel,
+.empty-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 48px 20px;
+  background: white;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 24px;
+  color: #334155;
+}
+
+.error-panel {
+  color: #dc2626;
+}
+
+.empty-panel h2 {
+  margin: 0;
+}
+
+.spinner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 6px solid rgba(67, 56, 202, 0.2);
+  border-top-color: #4338ca;
+  animation: spinner 0.9s linear infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  z-index: 50;
+}
+
+.modal-panel {
+  width: min(1080px, 100%);
+  max-height: calc(100vh - 56px);
+  overflow: auto;
+  background: white;
+  border-radius: 28px;
+  padding: 32px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  border: none;
+  background: transparent;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: #334155;
+}
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 28px;
+}
+
+.modal-poster img {
+  width: 100%;
+  border-radius: 22px;
+  object-fit: cover;
+}
+
+.modal-details h2 {
+  margin: 0 0 14px;
+}
+
+.modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: #475569;
+  margin-bottom: 18px;
+}
+
+.modal-genres,
+.modal-overview,
+.modal-meta {
+  margin: 0 0 16px;
+  color: #334155;
+}
+
+.modal-overview {
+  line-height: 1.75;
+}
+
+.modal-action {
+  border: none;
+  border-radius: 999px;
+  padding: 14px 20px;
+  background: #4338ca;
+  color: white;
+  font-weight: 700;
+}
+
+.modal-action--remove {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.modal-loading,
+.modal-error {
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .navbar,
+  .app-content {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .movie-card__poster {
+    min-height: 300px;
+  }
+
+  .modal-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    justify-content: center;
+  }
+
+  .movie-card__button {
+    width: calc(100% - 32px);
+  }
+}
+</style></head>
+  <body>
+    <div id="root"><div class="app-shell"><header class="navbar"><div class="navbar__brand"><span class="navbar__logo">🎬</span><div><p class="navbar__title">Movie Watchlist</p><p class="navbar__subtitle">Browse movies, save favorites, and build your watchlist</p></div></div><nav class="navbar__links"><button type="button" class="navbar__link navbar__link--active">Home</button><button type="button" class="navbar__link">My Watchlist<span class="navbar__badge">0</span></button></nav></header><main class="app-content"><section class="page-section"><div class="page-header"><div><h1>Popular Movies</h1><p>Browse trending titles and save the ones you want to watch.</p></div><label class="search-bar"><input placeholder="Search movies by title..." type="search" value=""></label></div><div class="movie-grid"><article class="movie-card"><div class="movie-card__poster"><img alt="Obsession" loading="lazy" src="./movie-watchlist_files/bRwnj8WEKBCvmfeUNOukJPwB43K.jpg"></div><div class="movie-card__info"><h3>Obsession</h3><div class="movie-card__meta"><span>2026</span><span>★★★★☆</span></div><p class="movie-card__rating">79%</p></div><button type="button" class="movie-card__button">Add to Watchlist</button></article><article class="movie-card"><div class="movie-card__poster"><img alt="Cocktail 2" loading="lazy" src="./movie-watchlist_files/sJB5guRMyS6jLo0cLsY8cYBAjzQ.jpg"></div><div class="movie-card__info"><h3>Cocktail 2</h3><div class="movie-card__meta"><span>2026</span><span>★★★☆☆</span></div><p class="movie-card__rating">50%</p></div><button type="button" class="movie-card__button">Add to Watchlist</button></article><article class="movie-card"><div class="movie-card__poster"><img alt="Mortal Kombat II" loading="lazy" src="./movie-watchlist_files/hwRdDFIhaEmpRgoki805YvyyjZf.jpg"></div><div class="movie-card__info"><h3>Mortal Kombat II</h3><div class="movie-card__meta"><span>2026</span><span>★★★★☆</span></div><p class="movie-card__rating">80%</p></div><button type="button" class="movie-card__button">Add to Watchlist</button></article><article class="movie-card"><div class="movie-card__poster"><img alt="Michael" loading="lazy" src="./movie-watchlist_files/zZtagf8mE4mdUqpWskVn23HaoiG.jpg"></div><div class="movie-card__info"><h3>Michael</h3><div class="movie-card__meta"><span>2026</span><span>★★★★☆</span></div><p class="movie-card__rating">87%</p></div><button type="button" class="movie-card__button">Add to Watchlist</button></article><article class="movie-card"><div class="movie-card__poster"><img alt="Madness" loading="lazy" src="./movie-watchlist_files/gV0J0Fqw2mYMtQbzb0ruxv9MAeZ.jpg"></div><div class="movie-card__info"><h3>Madness</h3><div class="movie-card__meta"><span>1980</span><span>★★☆☆☆</span></div><p class="movie-card__rating">50%</p></div><button type="button" class="movie-card__button">Add to Watchlist</button></article><article class="movie-card"><div class="movie-card__poster"><img alt="Bhooth Bangla" loading="lazy" src="./movie-watchlist_files/ArIS4vwUxdhm3j7tsTHmffdfU8W.jpg"></div><div class="movie-card__info"><h3>Bhooth Bangla</h3><div class="movie-card__meta"><span>2026</span><span>★★★☆☆</span></div><p class="movie-card__rating">54%</p></div><button type="button" class="movie-card__button">Add to Watchlist</button></article><article class="movie-card"><div class="movie-card__poster"><img alt="Salitan" loading="lazy" src="./movie-watchlist_files/rMgG7cWuq9O6zhhLs2CbqIKVA8V.jpg"></div><div class="movie-card__info"><h3>Salitan</h3><div class="movie-card__meta"><span>2024</span><span>★★☆☆☆</span></div><p class="movie-card__rating">40%</p></div><button type="button" class="movie-card__button">Add to Watchlist</button></article><article class="movie-card"><div class="movie-card__poster"><img alt="Karuppu" loading="lazy" src="./movie-watchlist_files/ky3KDMdvaeApRVL03kpfYHXzXqd.jpg"></div><div class="movie-card__info"><h3>Karuppu</h3><div class="movie-card__meta"><span>2026</span><span>★★★☆☆</span></div><p class="movie-card__rating">67%</p></div><button type="button" class="movie-card__button">Add to Watchlist</button></article><article class="movie-card"><div class="movie-card__poster"><img alt="Toy Story 5" loading="lazy" src="./movie-watchlist_files/a6H2U7pjibMia41TwyFVd1PVQw3.jpg"></div><div class="movie-card__info"><h3>Toy Story 5</h3><div class="movie-card__meta"><span>2026</span><span>★★★★☆</span></div><p class="movie-card__rating">75%</p></div><button type="button" class="movie-card__button">Add to Watchlist</button></article><article class="movie-card"><div class="movie-card__poster"><img alt="Your Heart Will Be Broken" loading="lazy" src="./movie-watchlist_files/7wIBfBl2gejt6xHxNSK0reVIm7E.jpg"></div><div class="movie-card__info"><h3>Your Heart Will Be Broken</h3><div class="movie-card__meta"><span>2026</span><span>★★★★☆</span></div><p class="movie-card__rating">70%</p></div><button type="button" class="movie-card__button">Add to Watchlist</button></article><article class="movie-card"><div class="movie-card__poster"><img alt="Peddi" loading="lazy" src="./movie-watchlist_files/kJAJNNBYlbqAcpTDxBNnaILSMTy.jpg"></div><div class="movie-card__info"><h3>Peddi</h3><div class="movie-card__meta"><span>2026</span><span>★★★☆☆</span></div><p class="movie-card__rating">61%</p></div><button type="button" class="movie-card__button">Add to Watchlist</button></article><article class="movie-card"><div class="movie-card__poster"><img alt="The Mandalorian and Grogu" loading="lazy" src="./movie-watchlist_files/5Vi8dSauVwH1HOsiZceDMbRr1Ca.jpg"></div><div class="movie-card__info"><h3>The Mandalorian and Grogu</h3><div class="movie-card__meta"><span>2026</span><span>★★★☆☆</span></div><p class="movie-card__rating">67%</p></div><button type="button" class="movie-card__button">Add to Watchlist</button></article><article class="movie-card"><div class="movie-card__poster"><img alt="The Unknown Man" loading="lazy" src="./movie-watchlist_files/4TpBhdaSl5ALHbgeaYOLF8Q3haz.jpg"></div><div class="movie-card__info"><h3>The Unknown Man</h3><div class="movie-card__meta"><span>2021</span><span>★★★★☆</span></div><p class="movie-card__rating">78%</p></div><button type="button" class="movie-card__button">Add to Watchlist</button></article><article class="movie-card"><div class="movie-card__poster"><img alt="The Super Mario Galaxy Movie" loading="lazy" src="./movie-watchlist_files/eJGWx219ZcEMVQJhAgMiqo8tYY.jpg"></div><div class="movie-card__info"><h3>The Super Mario Galaxy Movie</h3><div class="movie-card__meta"><span>2026</span><span>★★★★☆</span></div><p class="movie-card__rating">82%</p></div><button type="button" class="movie-card__button">Add to Watchlist</button></article><article class="movie-card"><div class="movie-card__poster"><img alt="Your Fault: London" loading="lazy" src="./movie-watchlist_files/nLxu237EJAisFCYKK48hN9Plobx.jpg"></div><div class="movie-card__info"><h3>Your Fault: London</h3><div class="movie-card__meta"><span>2026</span><span>★★★★☆</span></div><p class="movie-card__rating">76%</p></div><button type="button" class="movie-card__button">Add to Watchlist</button></article><article class="movie-card"><div class="movie-card__poster"><img alt="Damage" loading="lazy" src="./movie-watchlist_files/alf3JOPP7EYP0iO24gwe5YfRnqo.jpg"></div><div class="movie-card__info"><h3>Damage</h3><div class="movie-card__meta"><span>1992</span><span>★★★☆☆</span></div><p class="movie-card__rating">66%</p></div><button type="button" class="movie-card__button">Add to Watchlist</button></article><article class="movie-card"><div class="movie-card__poster"><img alt="Disclosure Day" loading="lazy" src="./movie-watchlist_files/3o5YPjDGDTcTDL5ftDA9NwN9dLd.jpg"></div><div class="movie-card__info"><h3>Disclosure Day</h3><div class="movie-card__meta"><span>2026</span><span>★★★☆☆</span></div><p class="movie-card__rating">67%</p></div><button type="button" class="movie-card__button">Add to Watchlist</button></article><article class="movie-card"><div class="movie-card__poster"><img alt="Hai Jawani Toh Ishq Hona Hai" loading="lazy" src="./movie-watchlist_files/vmlJvz6qVzYgei2V74GvnmcuQfW.jpg"></div><div class="movie-card__info"><h3>Hai Jawani Toh Ishq Hona Hai</h3><div class="movie-card__meta"><span>2026</span><span>★★★☆☆</span></div><p class="movie-card__rating">55%</p></div><button type="button" class="movie-card__button">Add to Watchlist</button></article><article class="movie-card"><div class="movie-card__poster"><img alt="KD – The Devil" loading="lazy" src="./movie-watchlist_files/nEuEMJrnLBneE9tJlmzbhCFLu95.jpg"></div><div class="movie-card__info"><h3>KD – The Devil</h3><div class="movie-card__meta"><span>2026</span><span>★★★★☆</span></div><p class="movie-card__rating">75%</p></div><button type="button" class="movie-card__button">Add to Watchlist</button></article><article class="movie-card"><div class="movie-card__poster"><img alt="The Furious" loading="lazy" src="./movie-watchlist_files/zP19YO60jwEsfKd5Qf1UvA5uJu8.jpg"></div><div class="movie-card__info"><h3>The Furious</h3><div class="movie-card__meta"><span>2026</span><span>★★★★☆</span></div><p class="movie-card__rating">77%</p></div><button type="button" class="movie-card__button">Add to Watchlist</button></article></div></section></main></div></div>
+    <script type="module" src="./movie-watchlist_files/main.jsx"></script>
+  
+
+</body></html>
